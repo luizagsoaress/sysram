@@ -27,6 +27,8 @@ while true; do
 
     if awk "BEGIN {exit !((${meta} > ${numeroTotal} || ${meta} <= 0) || (${multiplicador} <= 1))}"; then
         notify-send "Valor inválido!" "Veja os intervalos válidos no README."
+        echo "Multiplicador inválido!"
+        sleep 5
         exit 1
     fi
 
